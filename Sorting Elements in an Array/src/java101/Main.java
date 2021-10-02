@@ -7,29 +7,22 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-		
 		Scanner sc = new Scanner (System.in) ;
 		System.out.print("dizinin boyutu :  ");
 		int n = sc.nextInt() ;
 		 
 		int [] array = new int [n] ;
 		
-		for(int i = 1 ; i <= n+1 ; i++) 
+		for(int i = 0 ; i < n ; i++) 
 		{
-			System.out.print( i+ ". elemanı giriniz : ");
+			System.out.print( (i+1) +". elemanı giriniz : ");
 			
 			 array[i] = sc.nextInt() ;
 		}
 		
-		int arrayLen = array.length;
-		
-		
-		System.out.println(arrayLen);
- 	    Arrays.sort(array);
+		Arrays.sort(array);
  	
-		
-		System.out.println(Arrays.toString(array));
+		System.out.println("sıralama : "+Arrays.toString(array));
 		
 	}
-
 }
