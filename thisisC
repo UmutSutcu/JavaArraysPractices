@@ -1,0 +1,31 @@
+#include <stdio.h>0
+#include <stdlib.h>
+FILE *fp ;
+struct kayit {
+int ogrNo ;
+int dersKodu ;
+int puan ;
+
+};
+
+struct kayit ogr[50];
+
+
+FILE *veri ;
+
+void kayitGuncelle(){
+    int no,yeniNot;
+scanf("%d",&no);
+scanf("%d",&yeniNot);
+ogr[no].puan =yeniNot ;
+}
+
+
+int main()
+{
+   ogr[2].puan =50 ;
+   printf("%d", ogr[2].puan);
+kayitGuncelle();
+printf("%d", ogr[2].puan);
+return 0 ;
+}
