@@ -29,3 +29,65 @@ kayitGuncelle();
 printf("%d", ogr[2].puan);
 return 0 ;
 }
+
+_____________________________________________________________________________________________
+
+FILE *fp;
+struct kayit{
+    int ogrno;
+    int derskodu;
+    int puan;
+
+};
+
+struct kayit sinif[50];
+FILE *ogrinfo;
+
+
+void main()
+{
+        ogrinfo = fopen("ogrenci.txt","w");
+
+        srand(time(NULL));
+
+        for(int i= 0 ;i<50;i++){
+            sinif[i].ogrno=rand()%100;
+        }
+
+        for(int i= 0 ;i<50;i++){
+            sinif[i].derskodu=rand()%3+1;
+        }
+
+        for(int i= 0 ;i<50;i++){
+            sinif[i].puan=rand()%100;
+        }
+        for(int i= 0 ;i<50;i++){
+            fprintf(ogrinfo,"%d.ogrencinin no: %d \n",i+1,sinif[i].ogrno);
+            fprintf(ogrinfo,"%d.ogrencinin dersi: %d \n",i+1,sinif[i].derskodu);
+            fprintf(ogrinfo,"%d.ogrencinin notu:%d \n\n\n",i+1,sinif[i].puan);
+        }
+}
+
+
+________________________________________________________________________________________________________
+void main(){
+
+    FILE *fp;
+    int sayilar[100];
+    int i;
+
+    fp = fopen("ornek.dat","wb");
+    for (i=0;i<100; i++){
+        sayilar[i] = i;
+    }
+    fwrite(sayilar, sizeof(sayilar), 1, fp);
+    fclose(fp);
+    fp = fopen("ornek.dat","rb");
+    fread(sayilar,sizeof(sayilar),1,fp);
+    for(i=0;i<100;i++){
+        printf("%2d\n",sayilar[i]);
+    }
+    fclose(fp);
+
+}
+_______________________________________________________________
